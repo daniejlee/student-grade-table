@@ -1,8 +1,9 @@
 //api key: rjLuY0OC
 class App {
-  constructor() {
+  constructor(gradeTable) {
     this.handleGetGradesError = this.handleGetGradesError.bind(this)
     this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this)
+    this.gradeTable = gradeTable;
   }
   handleGetGradesError(error){
     console.error(error);

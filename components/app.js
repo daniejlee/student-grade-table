@@ -1,4 +1,4 @@
-class App(){
+class App{
   handleGetGradesError(error){
     console.error(error);
   }
@@ -8,6 +8,16 @@ class App(){
   constructor(){
     this.handleGetGradesError = this.handleGetGradesError.bind(this)
     this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this)
-
+  }
+  getGrades(){
+    $.ajax({
+      method: "GET",
+      url: "",
+      success: this.handleGetGradesSuccess,
+      error: this.handleGetGradesError
+    })
+  }
+  start(){
+    this.getGrades();
   }
 }

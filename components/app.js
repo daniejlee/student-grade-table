@@ -1,13 +1,21 @@
 //api key: rjLuY0OC
 class App {
-  constructor(gradeTable) {
+  constructor(gradeTable, pageHeader) {
     this.handleGetGradesError = this.handleGetGradesError.bind(this)
     this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this)
     this.gradeTable = gradeTable;
+    this.pageHeader = pageHeader;
   }
 
   handleGetGradesSuccess(grades){
     this.gradeTable.updateGrades(grades)
+    var gradesSum = 0;
+    for (var i = 0; i < grades.length; i++){
+      gradesSum += grades[i].grade;
+    }
+    var average = gradesSum / grades.length;
+    //call updateAverage() on pageHeader
+    this.pageHeader.updateAverage(average);
   }
   handleGetGradesError(error){
     console.error(error);

@@ -5,11 +5,12 @@ class App {
     this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this)
     this.gradeTable = gradeTable;
   }
+
+  handleGetGradesSuccess(grades){
+    this.gradeTable.updateGrades(grades)
+  }
   handleGetGradesError(error){
     console.error(error);
-  }
-  handleGetGradesSuccess(grades){
-    console.log(grades);
   }
   getGrades(){
     $.ajax({

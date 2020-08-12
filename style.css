@@ -1,3 +1,18 @@
 header > div:last-child {
   text-align: end;
 }
+
+.input-group-prepend {
+  padding: 0;
+}
+
+.input-group-text {
+  width: 100%;
+  background-color: white;
+  justify-content: center;
+  text-align: center;
+}
+
+.button-row {
+  text-align: right;
+}

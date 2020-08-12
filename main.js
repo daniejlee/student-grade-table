@@ -1,1 +1,3 @@
-//api key: rjLuY0OC
+
+let app = new App();
+app.start();

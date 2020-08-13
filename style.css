@@ -16,3 +16,12 @@ header > div:last-child {
 .button-row {
   text-align: right;
 }
+
+.button-column {
+  text-align: center;
+  width: 15%;
+}
+
+.no-grades-message {
+  text-align: center;
+}

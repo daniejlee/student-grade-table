@@ -39,6 +39,7 @@ class App {
   start(){
     this.getGrades();
     this.gradeForm.onSubmit(this.createGrade)
+    this.gradeTable.onDeleteClick(this.deleteGrade)
   }
 
   //Add new grades
@@ -62,7 +63,13 @@ class App {
 
   //Delete grades
   deleteGrade(id){
-    console.log(id)
+    $.ajax({
+      method: "DELETE",
+      url: ("https://sgt.lfzprototypes.com/api/grades/" + id),
+      headers: { "X-Access-Token": "rjLuY0OC" },
+      success: this.handleDeleteGradeSuccess,
+      error: this.handleDeleteGradeError
+    })
   }
   handleDeleteGradeError(error){
     console.error(error)
